@@ -1,0 +1,8 @@
+id - numar ordin
+data - data
+simbol - simbol
+side - cumparare /vanzare
+tp simbol - categorie 
+acount - cont piata
+cantitate -cantitate
+pret - pret

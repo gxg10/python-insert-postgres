@@ -1,2 +1,3 @@
 titlu	nume	locatie	numar
 mircea	apartament	capitol	141
+george	casa	faleza	25
