@@ -18,7 +18,7 @@ with open('ordv2.txt') as f:
 
 
 def insert_vendor(vendor_list):
-    sql = """INSERT INTO ord4 VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+    sql = """INSERT INTO ord6 VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
     conn = None
     try:
         params = config()
@@ -34,9 +34,29 @@ def insert_vendor(vendor_list):
         if conn is not None:
             conn.close()
 
-if __name__ == '__main__':
-    # insert one vendor
-    insert_vendor(tup_list)
+def select_from():
+    sql = """ SELECT * FROM ord6 where simbol = 'AMO' """
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+        cur.execute(sql)
+        test = cur.fetchall()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+    return test
+
+print (select_from())
+
+##
+##if __name__ == '__main__':
+##    # insert one vendor
+####    insert_vendor(tup_list)
+##    select_from()
 
 
 ## cod vechi
