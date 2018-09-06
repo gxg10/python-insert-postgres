@@ -1,0 +1,2 @@
+titlu	nume	locatie	numar
+mircea	apartament	capitol	141
